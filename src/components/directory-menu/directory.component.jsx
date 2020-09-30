@@ -18,10 +18,11 @@ class Directory extends Component {
           // option one
           this.state.directoryData.map((section) => (
             <MenuItem
-              key={section}
+              key={section.id}
               title={section.title}
               imageUrl={section.imageUrl}
               size={section.size}
+              linkUrl={section.linkUrl}
             />
           ))
 
@@ -29,7 +30,17 @@ class Directory extends Component {
               this.state.directoryData.map(({title, imageUrl, id})=>(
                 <MenuItem key={id} title={title} imageUrl={imageUrl}/>
             ))
-            */
+           // in menu items Receive the information in this way -> ({key, title, imageUrl})
+          */
+
+          /* option 3
+           this.state.directoryData.map(({ id, ...otherSectionProps }) => (
+            <MenuItem
+              key={id}
+              {...otherSectionProps}
+              // in menu items Receive the information in this way -> ({key, title, imageUrl, linkUrl, history, size, ....})
+            />
+          */
         }
       </div>
     );
