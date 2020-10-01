@@ -3,9 +3,10 @@ import { Route, Switch } from "react-router-dom";
 
 import "./App.css";
 import Header from "./components/header/header.component";
+import { SignInAndSignUp } from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { HomePage } from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
-//import Header from "./components/header/header.component";
+
 const HatsPage = (props) => {
   return (
     <div>
@@ -15,7 +16,6 @@ const HatsPage = (props) => {
 };
 
 const App = () => {
-  // return <HomePage />;
   return (
     <div>
       <Header />
@@ -23,6 +23,7 @@ const App = () => {
         <Route exact path="/" component={HomePage} />
         <Route path="/hats" component={HatsPage} />
         <Route path="/shop" component={ShopPage} />
+        <Route path="/sign-in" component={SignInAndSignUp} />
       </Switch>
     </div>
   );
